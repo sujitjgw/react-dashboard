@@ -19,10 +19,11 @@ const Layout = ({ children }) => {
         <nav className="sidebar-nav">
           <ul>
             <li><Link to="/"><i className="fas fa-home fa-lg"></i> {isSidebarOpen && "Dashboard"}</Link></li>
-            <li><Link to="/sync"><i className="fas fa-sync fa-lg"></i> {isSidebarOpen && "Sync Shopify Product"}</Link></li>
-            <li><Link to="/upload"><i className="fas fa-upload fa-lg"></i> {isSidebarOpen && "Upload CSV Data"}</Link></li>
-            <li><Link to="/list"><i className="fas fa-list fa-lg"></i> {isSidebarOpen && "List CSV Data"}</Link></li>
-            <li><Link to="/filter"><i className="fas fa-filter fa-lg"></i> {isSidebarOpen && "Layered Filter Data"}</Link></li>
+            <li><Link to="/text-change"><i className="fas fa-sync fa-lg"></i> {isSidebarOpen && "Text Changes"}</Link></li>
+            <li><Link to="/sitewide-pincode"><i className="fas fa-upload fa-lg"></i> {isSidebarOpen && "Sitewide Pincode"}</Link></li>
+            <li><Link to="/collection-tag"><i className="fas fa-list fa-lg"></i> {isSidebarOpen && "Collection/Tag Specific Pincode"}</Link></li>
+            <li><Link to="/product-specific-pincode"><i className="fas fa-filter fa-lg"></i> {isSidebarOpen && "Product Specific Pincode"}</Link></li>
+            <li><Link to="/uploaded-data"><i className="fas fa-filter fa-lg"></i> {isSidebarOpen && "Uploaded Data"}</Link></li>
             <li><Link to="/settings"><i className="fas fa-cog fa-lg"></i> {isSidebarOpen && "Settings"}</Link></li> 
           </ul>
         </nav>

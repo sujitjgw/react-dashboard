@@ -2,6 +2,10 @@ body h2{
   margin-top:0;
   margin-bottom:0;
 }
+.container-fluid{
+  padding-left:0;
+  padding-right:0;
+}
 .layout-container {
   display: flex;
   height: 100vh;
@@ -34,6 +38,7 @@ body h2{
 .sidebar-nav ul {
   list-style: none;
   padding: 0;
+  background:#343a40;
 }
 
 .sidebar-nav li {
@@ -81,21 +86,11 @@ body h2{
 .stat-card h3 {
   margin-bottom: 10px;
 }
-.custom-file-upload {
-  border: 1px solid #343a40;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  background-color: #343a40;
-  border-radius: 5px;
-  color: #fff;
-  font-weight: 500!important;
+@media screen and (max-width: 767px) {
+  .custom-flex-sitewide{
+    display: block!important;
+  }
+  .sample-btn-left-xs{
+    text-align:start!important;
+  }
 }
-
-.custom-file-upload:hover {
-  background-color: #23272b;
-  color: #fff;
-}
-.file-input {
-  display: none; /* Hide the default file input */
-}  

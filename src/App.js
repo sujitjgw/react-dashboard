@@ -7,6 +7,11 @@ import UploadCsvPage from './components/UploadCsvPage';
 import ListCsvPage from './components/ListCsvPage';
 import LayeredFilterPage from './components/LayeredFilterPage';
 import './components/component_css/Layout.css';
+import TextChangesPage from './components/TextChangesPage';
+import SiteWidePinCode from './components/SiteWidePinCode';
+import CollectionTag from './components/CollectionTag';
+import ProdSpecificPincode from './components/ProdSpecificPincode';
+import UploadedData from './components/UploadedData';
 
 export const CounterContext = createContext();
 
@@ -28,6 +33,11 @@ function App() {
           <Route path="/upload" element={<Layout><UploadCsvPage /></Layout>} />
           <Route path="/list" element={<Layout><ListCsvPage /></Layout>} />
           <Route path="/filter" element={<Layout><LayeredFilterPage /></Layout>} />
+          <Route path="/text-change" element={<Layout><TextChangesPage /></Layout>} />
+          <Route path="/sitewide-pincode" element={<Layout><SiteWidePinCode /></Layout>} />
+          <Route path="/collection-tag" element={<Layout><CollectionTag /></Layout>} />
+          <Route path="/product-specific-pincode" element={<Layout><ProdSpecificPincode /></Layout>} />
+          <Route path="/uploaded-data" element={<Layout><UploadedData /></Layout>} />
         </Routes>
       </Router>
     </CounterContext.Provider>
