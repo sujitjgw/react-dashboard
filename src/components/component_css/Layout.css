@@ -94,3 +94,24 @@ body h2{
     text-align:start!important;
   }
 }
+.nav-tabs{
+    width: max-content;
+    border-bottom: 1px solid #000000;
+}
+.nav-link.active{
+  background-color: #dc3545!important;
+    color: #fff!important;
+    border-bottom: 2px solid #000000 !important;
+}
+.nav-link:hover{
+ border:1px solid transparent!important;
+ color: #000000;
+ border-bottom: 2px solid #000000 !important;
+}
+.nav-link{
+color: #000000;
+  cursor:pointer;
+}
+.small-box{
+  color:#fff;
+}
