@@ -9,7 +9,7 @@ export default function CollectionTag() {
           </div>
           <div className="col-lg-4">
           <div className='text-end sample-btn-left-xs'>
-        <button type="button" class="btn btn-info">Download Sample CSV Format</button>
+        <button type="button" class="btn btn-info text-light">Download Sample CSV Format</button>
         </div>
           </div>
       </div>
