@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 export default function UploadedData() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-  const [selectedTab, setSelectedTab] = useState('sitewide'); 
+  const [selectedTab, setSelectedTab] = useState('sitewide');
 
   const sitewideData = [
     { pincode: '201301' },
@@ -84,62 +84,147 @@ export default function UploadedData() {
             <input className="form-control mb-4" placeholder="Search by Pincode" />
           </div>
           <div className="col-lg-12 mb-3">
-            <ul className="nav nav-tabs">
-              <li className="nav-item">
-                <button
-                  className={`nav-link ${selectedTab === 'sitewide' ? 'active' : ''}`}
-                  onClick={() => setSelectedTab('sitewide')}
-                   
+            <ul className="nav nav-tabs" id="myTab" role="tablist">
+              <li className="nav-item" role="presentation">
+                <a
+                  className="nav-link active"
+                  id="sitewide-tab"
+                  data-bs-toggle="tab"
+                  href="#sitewide"
+                  role="tab"
+                  aria-controls="sitewide"
+                  aria-selected="true"
+                  onClick={() => {
+                    setSelectedTab('sitewide');
+                    setCurrentPage(1);
+                  }}
                 >
                   Sitewide Pincode
-                </button>
+                </a>
               </li>
-              <li className="nav-item">
-                <button
-                  className={`nav-link ${selectedTab === 'collectionTag' ? 'active' : ''}`}
-                  onClick={() => setSelectedTab('collectionTag')}
-                   
+              <li className="nav-item" role="presentation">
+                <a
+                  className="nav-link"
+                  id="collectionTag-tab"
+                  data-bs-toggle="tab"
+                  href="#collectionTag"
+                  role="tab"
+                  aria-controls="collectionTag"
+                  aria-selected="false"
+                  onClick={() => {
+                    setSelectedTab('collectionTag');
+                    setCurrentPage(1);
+                  }}
                 >
                   Collection/Tag Specific Pincode
-                </button>
+                </a>
               </li>
-              <li className="nav-item">
-                <button
-                  className={`nav-link ${selectedTab === 'productSpecific' ? 'active' : ''}`}
-                  onClick={() => setSelectedTab('productSpecific')}
-                   
+              <li className="nav-item" role="presentation">
+                <a
+                  className="nav-link"
+                  id="productSpecific-tab"
+                  data-bs-toggle="tab"
+                  href="#productSpecific"
+                  role="tab"
+                  aria-controls="productSpecific"
+                  aria-selected="false"
+                  onClick={() => {
+                    setSelectedTab('productSpecific');
+                    setCurrentPage(1);
+                  }}
                 >
                   Product Specific Pincode
-                </button>
+                </a>
               </li>
             </ul>
           </div>
           <div className="col-lg-12">
-            <div className="table-responsive">
-              <table className="table table-bordered">
-                <thead>
-                  <tr>
-                    {selectedTab === 'collectionTag' && <th>Product Tag</th>}
-                    {selectedTab === 'productSpecific' && <th>Product SKU</th>}
-                    <th>Pincode</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {currentItems.map((item, index) => (
-                    <tr key={index}>
-                      {selectedTab === 'collectionTag' && <td>{item.tag}</td>}
-                      {selectedTab === 'productSpecific' && <td>{item.sku}</td>}
-                      <td>{item.pincode}</td>
-                      <td>
-                        <button className="btn btn-danger">
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="tab-content" id="myTabContent">
+              <div
+                className={`tab-pane fade show ${selectedTab === 'sitewide' ? 'active' : ''}`}
+                id="sitewide"
+                role="tabpanel"
+                aria-labelledby="sitewide-tab"
+              >
+                <div className="table-responsive">
+                  <table className="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Pincode</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {currentItems.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item.pincode}</td>
+                          <td>
+                            <button className="btn btn-danger">Delete</button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                className={`tab-pane fade ${selectedTab === 'collectionTag' ? 'show active' : ''}`}
+                id="collectionTag"
+                role="tabpanel"
+                aria-labelledby="collectionTag-tab"
+              >
+                <div className="table-responsive">
+                  <table className="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Product Tag</th>
+                        <th>Pincode</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {currentItems.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item.tag}</td>
+                          <td>{item.pincode}</td>
+                          <td>
+                            <button className="btn btn-danger">Delete</button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div
+                className={`tab-pane fade ${selectedTab === 'productSpecific' ? 'show active' : ''}`}
+                id="productSpecific"
+                role="tabpanel"
+                aria-labelledby="productSpecific-tab"
+              >
+                <div className="table-responsive">
+                  <table className="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Product SKU</th>
+                        <th>Pincode</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {currentItems.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item.sku}</td>
+                          <td>{item.pincode}</td>
+                          <td>
+                            <button className="btn btn-danger">Delete</button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
             {showPagination && (
               <ul className="pagination">

@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       <main className="main-content">
         <header className="main-header">
           <div><i className='fa fa-bars' onClick={toggleSidebar}></i></div>
-          <div><button className="btn btn-dark">Logout</button></div>
+          <div><Link to="/login"><button className="btn btn-dark">Logout</button></Link></div>
         </header>
         <section className="content-section">
           {children}
