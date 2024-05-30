@@ -45,8 +45,11 @@ export default function TextChangesPage() {
               </div>
             </div>
             <div className="row mt-3">
-              <div className="col-lg-12">
-                <button type="submit" className="btn btn-danger">Save</button>
+              <div className="col-md-4">
+                
+              </div>
+              <div className="col-md-8">
+              <button type="submit" className="btn btn-danger">Save</button>
               </div>
             </div>
           </form>

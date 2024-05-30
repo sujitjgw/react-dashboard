@@ -11,6 +11,7 @@ import SiteWidePinCode from './components/SiteWidePinCode';
 import CollectionTag from './components/CollectionTag';
 import ProdSpecificPincode from './components/ProdSpecificPincode';
 import UploadedData from './components/UploadedData';
+import LoginPage from './components/LoginPage';
 
 export const CounterContext = createContext();
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/collection-tag" element={<Layout><CollectionTag /></Layout>} />
           <Route path="/product-specific-pincode" element={<Layout><ProdSpecificPincode /></Layout>} />
           <Route path="/uploaded-data" element={<Layout><UploadedData /></Layout>} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </Router>
     </CounterContext.Provider>
